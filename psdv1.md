@@ -260,7 +260,7 @@ print(df.describe())  # Generate descriptive statistics
 ```
 
 Output: 
-```bash
+```text
     a         b
 0  35  0.401885
 1  39  0.457552
@@ -288,7 +288,7 @@ print(df.head())
 ```
 
 Output:
-```bash
+```text
       a         b          c
 0  35.0  0.401885  14.065991
 1  39.0  0.457552  17.844511
@@ -308,7 +308,7 @@ print(merged_df)
 ```
 
 Output:
-```bash
+```text
       a         b          c     d
 0  35.0  0.401885  14.065991  <NA>
 1  39.0  0.457552  17.844511  <NA>
@@ -336,7 +336,7 @@ print(df.head())
 ```
 
 Output:
-```bash
+```text
    timestamp    id     name         x         y  cluster
 0 2000-01-01  1008      Ray  0.269513 -0.130358        0
 1 2000-01-02  1075   Hannah  0.559423 -0.707996        0
@@ -355,7 +355,7 @@ print(df)
 ```
 
 Output:
-```bash
+```text
       name name_upper  name_length
 0    Alice      ALICE            5
 1      Bob        BOB            3
@@ -374,7 +374,7 @@ import os
 !nvidia-smi
 #tells the details about GPU
 ```
-```bash
+```text
 Mon Feb 24 02:39:08 2025       
 +-----------------------------------------------------------------------------------------+
 | NVIDIA-SMI 550.120                Driver Version: 550.120        CUDA Version: 12.4     |
@@ -406,7 +406,7 @@ path = "/home/suhani/Downloads/archive/yellow_tripdata_2016-03.csv"
 #Tells about the system cpu
 ```
 
-```bash
+```text
 Architecture:             x86_64
   CPU op-mode(s):         32-bit, 64-bit
   Address sizes:          48 bits physical, 48 bits virtual
@@ -519,7 +519,7 @@ print(f"Used Memory: {info.used / 1024**3:.2f} GB")
 
 #tells about gpu memory usage
 ```
-```bash
+```text
 Total Memory: 8.00 GB
 Free Memory: 5.58 GB
 Used Memory: 2.41 GB
@@ -529,7 +529,7 @@ Used Memory: 2.41 GB
 print(f"Average Pandas load time: {avg_pd_load_time:.2f}s")
 print(f"Average cuDF load time: {avg_cudf_load_time:.2f}s")
 ```
-```bash
+```text
 Average Pandas load time: 15.13s
 Average cuDF load time: 1.12s
 ```
@@ -561,7 +561,7 @@ df_pd_subset = df_pd.head(1000)
 df_cudf_subset = df_cudf.head(1000)
 print(df_pd.columns)
 ```
-```bash
+```text
 Index(['VendorID', 'tpep_pickup_datetime', 'tpep_dropoff_datetime',
        'passenger_count', 'trip_distance', 'pickup_longitude',
        'pickup_latitude', 'RatecodeID', 'store_and_fwd_flag',
@@ -569,6 +569,8 @@ Index(['VendorID', 'tpep_pickup_datetime', 'tpep_dropoff_datetime',
        'extra', 'mta_tax', 'tip_amount', 'tolls_amount',
        'improvement_surcharge', 'total_amount'],
       dtype='object')
+```
+
 ```python
 pd_merge_times = []
 
@@ -594,7 +596,7 @@ avg_cudf_merge_time = sum(cudf_merge_times)/len(cudf_merge_times)
 print(avg_pd_merge_time)
 print(avg_cudf_merge_time)
 ```
-```bash
+```text
 0.13312773704528807
 0.01996917724609375
 ```
@@ -623,7 +625,7 @@ avg_cudf_group_time = sum(cudf_group_times)/len(cudf_group_times)
 print(avg_pd_group_time)
 print(avg_cudf_group_time)
 ```
-```bash
+```text
 0.11287260055541992
 0.02339310646057129
 ```
@@ -687,6 +689,11 @@ print(f'GPU Memory (cuDF): {gdf.memory_usage(deep=True).sum() / 1e6} MB')
 print(f'CPU Memory (Pandas): {pdf.memory_usage(deep=True).sum() / 1e6} MB')
 ```
 
+```text
+GPU Memory (cuDF): 160.0 MB
+CPU Memory (Pandas): 160.000132 MB
+```
+
   **Issue:** If the GPU memory is limited (e.g., 8 GB), this duplication could lead to Out-of-Memory (OOM) errors during large operations.
 
 * Operations (Merge)
@@ -721,6 +728,7 @@ Dask offers a great solution by allowing you to work with out-of-core computatio
 - *Parallelism*: Dask can utilize multi-core CPUs and distributed computing, keeping memory usage optimal.
 
 ```python
+import dask.dataframe as dd
 # Load data using Dask
 df_dask = dd.read_csv('yellow_tripdata_2016-03.csv')
 
@@ -784,6 +792,6 @@ To dive deeper into RAPIDS cuDF and enhance your GPU-accelerated data processing
 
 6. **Setting Up RAPIDS on Google Colab:**  
    The easiest way to experiment with cuDF without needing a local GPU setup.  
-   [RAPIDS on Google Colab](https://rapids.ai/start.html)  
+   [RAPIDS on Google Colab](https://rapids.ai/start.html)
 
-These resources will not only help you get started but also guide you in mastering cuDF and integrating GPU acceleration into your data workflows. Happy coding! 😊
+These resources will not only help you get started but also guide you in mastering cuDF and integrating GPU acceleration into your data workflows. Happy coding! 😊 
