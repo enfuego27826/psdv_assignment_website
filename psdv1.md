@@ -65,7 +65,7 @@ pip install cudf-cu11 dask-cudf-cu11 --extra-index-url=https://pypi.nvidia.com
 
 *Tip - Make sure to replace cu11 by the appropriate CUDA driver version on your system.* 
 
-If needed, you can create a new enviornment with compatible version of python in the below way - 
+If needed, you can create a new enviornment with compatible version of python in the below way (use a bash terminal for below)- 
 
 ```bash
 conda create -n cudf_env python=3.10
@@ -74,7 +74,7 @@ conda activate cudf_env
 
 
 #### 3. **Conda Installation**  
-For a full RAPIDS setup, using conda is recommended -
+For a full RAPIDS setup, using conda is recommended (use a bash terminal for below)-
 
 ```bash
 # Install Miniconda or Anaconda first
@@ -102,7 +102,7 @@ After running this, you should be able to select the **"RAPIDS"** kernel in Jupy
 
 ---
 ### Configuration
-After the installation, follow these steps to verify and configure cuDFL
+After the installation, follow these steps to verify and configure cuDF.
 
 **Verifying Installation**
 
