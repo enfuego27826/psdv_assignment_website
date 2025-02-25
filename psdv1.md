@@ -794,4 +794,8 @@ To dive deeper into RAPIDS cuDF and enhance your GPU-accelerated data processing
    The easiest way to experiment with cuDF without needing a local GPU setup.  
    [RAPIDS on Google Colab](https://rapids.ai/start.html)
 
+6. **Benchmarking:**  
+   The benchmarking was done locally on a gaming laptop with AMD Ryzen 7 7840hs and RTX 4060 (8GB VRAM).  
+   [Benchmarking](https://github.com/enfuego27826/psdv_assignment_website/blob/main/assignment_psdv.ipynb)
+
 These resources will not only help you get started but also guide you in mastering cuDF and integrating GPU acceleration into your data workflows. Happy coding! 😊 
